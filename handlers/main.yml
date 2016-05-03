@@ -1,0 +1,7 @@
+---
+- name: service | denyhosts | restarted
+  tags: denyhosts
+  service:
+    name=denyhosts
+    state=restarted
+

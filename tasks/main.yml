@@ -1,0 +1,27 @@
+---
+- name: yum | denyhosts
+  tags: denyhosts
+  yum:
+    name=denyhosts
+    state=latest
+    update_cache=yes
+  register: denyhosts_yum
+
+- block:
+    - name: template | denyhosts.conf
+      template:
+        src=denyhosts.conf.j2
+        dest=/etc/denyhosts.conf
+        owner=root
+        group=root
+        mode=0600
+      notify:
+        - service | denyhosts | restarted
+    - name: service | denyhosts
+      service:
+        name=denyhosts
+        enabled=yes
+        state=started
+  tags: denyhosts
+  when: denyhosts_yum|success
+
