@@ -3,6 +3,7 @@
   tags: denyhosts
   yum:
     name=denyhosts
+    enablerepo=epel
     state=latest
     update_cache=yes
   register: denyhosts_yum
