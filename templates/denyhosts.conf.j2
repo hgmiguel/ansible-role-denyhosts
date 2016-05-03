@@ -114,7 +114,7 @@ PURGE_THRESHOLD = {{ denyhosts_purge_threshold }}
 #BLOCK_SERVICE = ALL
 # To block only sshd:
 {% if denyhosts_block_service is defined %}
-BLOCK_SERVICE = {{ denyhosts_block_service }}
+BLOCK_SERVICE  = {{ denyhosts_block_service }}
 {% else %}
 BLOCK_SERVICE  = sshd
 {% endif %}
@@ -827,7 +827,7 @@ SYNC_INTERVAL = {{ denyhosts_sync_interval }}
 {%   if denyhosts_sync_upload %}
 SYNC_UPLOAD = yes
 {%   else %}
-SYNC_UPLOAD = on
+SYNC_UPLOAD = no
 {%   endif %}
 {% else %}
 SYNC_UPLOAD = no
@@ -889,7 +889,7 @@ SYNC_DOWNLOAD_THRESHOLD = {{ denyhosts_sync_download_threshold }}
 # Resiliency is defined as the timespan between a hackers first known 
 # attack and its most recent attack.  Example:
 # 
-# If the centralized  denyhosts_net server records an attack at 2 PM 
+# If the centralized  denyhosts.net server records an attack at 2 PM 
 # and then again at 5 PM, specifying a SYNC_DOWNLOAD_RESILIENCY = 4h 
 # will not download this ip address.
 #

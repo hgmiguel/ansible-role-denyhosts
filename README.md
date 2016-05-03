@@ -30,7 +30,7 @@ Available variables are listed below, along with default values:
     denyhosts_hostname_lookup: False
     denyhosts_hosts_deny: /etc/hosts.deny
     denyhosts_lock_file: /var/lock/subsys/denyhosts
-    denyhosts_purge_deny: 12h
+    denyhosts_purge_deny: 4w 
     denyhosts_secure_log: /var/log/secure
     denyhosts_smtp_from: 'DenyHosts <nobody@localhost>'
     denyhosts_smtp_host: localhost
