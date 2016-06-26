@@ -27,4 +27,5 @@ denyhosts_suspicious_login_report_allowed_hosts: True
 denyhosts_sync_download: False
 denyhosts_sync_upload: False
 denyhosts_work_dir: /var/lib/denyhosts
+denyhosts_allowed_hosts: []
 
