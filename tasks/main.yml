@@ -18,6 +18,13 @@
         mode=0600
       notify:
         - service | denyhosts | restarted
+    - name: allowed_host | denyhosts
+      lineinfile:
+        dest: "{{ denyhosts_work_dir }}/allowed-hosts"
+        line: '{{ item }}'
+      with_items: "{{ denyhosts_allowed_hosts }}"
+      notify:
+        - service | denyhosts | restarted
     - name: service | denyhosts
       service:
         name=denyhosts
