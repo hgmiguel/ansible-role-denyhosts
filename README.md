@@ -40,6 +40,7 @@ Available variables are listed below, along with default values:
     denyhosts_sync_download: False
     denyhosts_sync_upload: False
     denyhosts_work_dir: /var/lib/denyhosts
+    denyhosts_allowed_hosts: []
 
 ## Dependencies
 
@@ -51,6 +52,8 @@ Available variables are listed below, along with default values:
       roles:
         - role: tkimball83.denyhosts
           denyhosts_admin_email: your@email.com
+          denyhosts_allowed_hosts:
+            - 127.0.0.1
 
 ## License
 
